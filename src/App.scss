@@ -1,0 +1,19 @@
+* {
+    font-size: 14px;
+}
+.app {
+
+    th, td {
+        white-space: nowrap;
+    }
+    
+    td.item-account {
+        overflow: hidden; /* Обрезаем все, что не помещается в область */
+        text-overflow:ellipsis; /* Добавляем многоточие */
+    }
+    .pagination {
+        justify-content: center;
+    }
+}
+
+
