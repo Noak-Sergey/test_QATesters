@@ -1,11 +1,11 @@
 import './App.scss';
 import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
 import { db } from './api/api';
+import { Btn } from './component/button/Button';
 
 
 function App() {
-  console.log(db);
+  
   
   return (
     <div className="App">
@@ -19,24 +19,16 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>№1780 28.10.2021 20:42</td>
-            <td>Доставка клиенту Админов Т.Т</td>
-            <td>Сысоева Сбыт Липецк</td>
-            <td><Button variant="danger">Выполнено</Button></td>
+          {db.map(item => {
+            return (
+          <tr key={item.oguid}>
+            <td>{item.id} time:{item.created_date}</td>
+            <td>{item.order_type.name} / {item.created_user.surname} {item.created_user.name.slice(0, 1)}. {item.created_user.patronymic.slice(0, 1)}</td>
+            <td>{item.account.name} / {item.terminal.name}</td>
+            <td><Btn status={item.status}/></td>
           </tr>
-          <tr>
-            <td>№1780 28.10.2021 20:42</td>
-            <td>Доставка клиенту Админов Т.Т</td>
-            <td>Сысоева Сбыт Липецк</td>
-            <td><Button variant="danger">Выполнено</Button></td>
-          </tr>
-          <tr>
-            <td>№1780 28.10.2021 20:42</td>
-            <td>Доставка клиенту Админов Т.Т</td>
-            <td>Сысоева Сбыт Липецк</td>
-            <td><Button variant="danger">Выполнено</Button></td>
-          </tr>
+            )
+          })}
         </tbody>
       </Table>
     </div>
