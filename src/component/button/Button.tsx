@@ -42,6 +42,6 @@ export const Btn = (props: BtnPropsType) => {
     onVariant(props.status)
     
     return (
-        <Button href="#" variant={btnStyle} size="sm">{btnName}</Button>
+        <Button style={{width: "100px"}} href="#" variant={btnStyle} size="sm">{btnName}</Button>
     )
 }

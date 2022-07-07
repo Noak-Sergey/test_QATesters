@@ -2,6 +2,7 @@ import './App.scss';
 import Table from 'react-bootstrap/Table';
 import { db } from './api/api';
 import { Btn } from './component/button/Button';
+import { ItemDate } from './component/itemDate/ItemDate';
 
 
 function App() {
@@ -19,10 +20,10 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {db.map(item => {
+          {db.map((item, i) => {
             return (
           <tr key={item.oguid}>
-            <td>{item.id} time:{item.created_date}</td>
+            <td>№{item.id} / <ItemDate time={item.created_date}/></td>
             <td>{item.order_type.name} / {item.created_user.surname} {item.created_user.name.slice(0, 1)}. {item.created_user.patronymic.slice(0, 1)}</td>
             <td>{item.account.name} / {item.terminal.name}</td>
             <td><Btn status={item.status}/></td>
