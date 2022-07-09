@@ -7,6 +7,7 @@ import { ItemAccount } from './component/itemAccount/ItemAccount';
 import { Paginator } from './component/paginator/paginator';
 import { getData } from './api/api';
 import { ItemType } from './type';
+import { ItemAutor } from './component/itemAutor/ItemAccount';
 
 
 function App() {
@@ -56,7 +57,7 @@ function App() {
             return (
               <tr key={item.oguid}>
                 <td>№{item.id} / <ItemDate time={item.created_date}/></td>
-                <td>{item.order_type.name} / {item.created_user.surname} {item.created_user.name.slice(0, 1)}. {item.created_user.patronymic.slice(0, 1)}.</td>
+                <td>{item.order_type.name} / <ItemAutor surname={item.created_user.surname} name={item.created_user.name} patronymic={item.created_user.patronymic}/></td>
                 <td className='item-account'><ItemAccount accountName={item.account.name} terminalName={item.terminal.name}/></td>
                 <td><Btn status={item.status}/></td>
               </tr>
