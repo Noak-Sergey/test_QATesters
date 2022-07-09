@@ -31,7 +31,7 @@ export const Paginator = (props: PaginatorPropsType) => {
         //      <Pagination.Item onClick={()=>{props.paginate(9)}}>{9}</Pagination.Item>
         //      <Pagination.Item onClick={()=>{props.paginate(10)}}>{10}</Pagination.Item>
         //     <Pagination.Next onClick={props.nextPage} />
-        //     <Pagination.Last onClick={()=>{props.paginate(pageNumber.length - 1)}} />
+        //     <Pagination.Last onClick={()=>{props.paginate(pageNumber.length)}} />
         // </Pagination>
 
         //или такой вариант
@@ -62,7 +62,7 @@ export const Paginator = (props: PaginatorPropsType) => {
                 </a>
             </li> 
             <li className="page-item" >
-                <a href="#" className="page-link" onClick={()=>{props.paginate(pageNumber.length - 1)}}> 
+                <a href="#" className="page-link" onClick={()=>{props.paginate(pageNumber.length)}}> 
                     {'>>'}
                 </a>
             </li>

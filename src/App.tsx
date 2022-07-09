@@ -1,22 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 import Table from 'react-bootstrap/Table';
-import { db } from './api/api';
 import { Btn } from './component/button/Button';
 import { ItemDate } from './component/itemDate/ItemDate';
 import { ItemAccount } from './component/itemAccount/ItemAccount';
 import { Paginator } from './component/paginator/paginator';
+import { getData } from './api/api';
+import { ItemType } from './type';
 
 
 function App() {
 
+  const [items, setItems] = useState<ItemType[]>([])
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [itemsPerPage] = useState<number>(10) //кол-во отображаемых элементов
+
+  useEffect(() => {
+    getData("http://localhost:3000/data")
+    .then(data => {
+      
+      setItems(data)
+    })
+  },[])
 
 
   const lastItemIndex = currentPage * itemsPerPage
   const firstItemIndex = lastItemIndex - itemsPerPage
-  const currentItem = db.slice(firstItemIndex, lastItemIndex)
+  const currentItem = items.slice(firstItemIndex, lastItemIndex)
 
   const paginate = (num: number) => {
       setCurrentPage(num)
@@ -57,7 +67,7 @@ function App() {
       <div >
         <Paginator 
           itemsPerPage={itemsPerPage} 
-          totalItems={db.length} 
+          totalItems={items.length} 
           paginate={paginate}
           nextPage={nextPage}
           prevPage={prevPage}/>
