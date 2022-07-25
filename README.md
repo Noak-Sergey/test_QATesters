@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+https://noak-sergey.github.io/test_QATesters/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
