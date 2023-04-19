@@ -1,14 +1,16 @@
+import { FC } from 'react';
 
 type ItemAccountPropsType = {
-    accountName: string
-    terminalName: string
-}
+  accountName: string;
+  terminalName: string;
+};
 
-export const ItemAccount = (props: ItemAccountPropsType) => {
-    
-    return (
-        <div>
-            {props.accountName} / {props.terminalName}
-        </div>
-    )
-}
+const ItemAccount: FC<ItemAccountPropsType> = ({ accountName, terminalName }) => {
+  return (
+    <div>
+      {accountName} / {terminalName}
+    </div>
+  );
+};
+
+export default ItemAccount;

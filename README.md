@@ -1,12 +1,43 @@
-# Getting Started with Create React App
+# test_QATesters - work with orders
 
 https://noak-sergey.github.io/test_QATesters/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Install all packages... (yarn add ~ or ~ npm install)
 
-## Available Scripts
+yarn add -D eslint prettier
+yarn add -D eslint-plugin-react => exclude writing anti-patterns
+yarn add -D eslint-plugin-react-hooks => check valid hooks in react code
+yarn add -D eslint-plugin-import => check all imports for correct work
+yarn add -D eslint-plugin-prettier
+yarn add -D eslint-plugin-jsx-a11y => check code for people with disabilities
 
-In the project directory, you can run:
+## Full command:
+
+yarn add -D eslint prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-prettier
+
+yarn add -D eslint-config-airbnb => airbnb config
+yarn add -D eslint-config-prettier => prettier config, no conflict with airbnb
+yarn add -D eslint-import-resolver-typescript => for correct work eslint-plugin-import package with typescript
+
+## Full command:
+
+yarn add -D eslint-config-airbnb eslint-config-prettier eslint-import-resolver-typescript
+
+## Full command:
+
+yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+## Create file
+
+Create .env in your project folder
+Create .prettierrc file in your project folder
+Create .eslintrc.json file in your project folder
+Create .eslintignore in your project folder => eslint don't will analizing added files
+from package.json delete "eslintConfig"
+
+### `yarn json-server -w db.json`
+
+Start this command. And then open second window of terminal and start next command bellow.
 
 ### `yarn start`
 
