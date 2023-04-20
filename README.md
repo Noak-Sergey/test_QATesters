@@ -2,7 +2,7 @@
 
 https://noak-sergey.github.io/test_QATesters/
 
-## Install all packages... (yarn add ~ or ~ npm install)
+## Install all packages... (yarn install ~ or ~ npm install)
 
 yarn add -D eslint prettier
 yarn add -D eslint-plugin-react => exclude writing anti-patterns

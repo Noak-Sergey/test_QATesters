@@ -42,7 +42,7 @@
         "@typescript-eslint/no-unused-vars":["error"],
         "@typescript-eslint/no-use-before-define":["error"],
         "@typescript-eslint/explicit-function-return-type": "off",
-        "prettier/prettier": "error",
+        "prettier/prettier": ["error", {"endOfLine": "auto"}],
         "jsx-ally/label-has-for": "off",
         "jsx-ally/label-has-associated-control": "off",
         "react/prop-types": 0,

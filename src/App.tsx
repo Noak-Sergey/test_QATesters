@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
+
 import './App.scss';
 import Table from 'react-bootstrap/Table';
-import { Btn } from './component/button';
-import { ItemDate } from './component/itemDate';
-import { ItemAccount } from './component/itemAccount';
-import { Paginator } from './component/paginator';
+
 import { getData } from './api/api';
-import { ItemType } from './type';
+import { Btn } from './component/button';
+import { ItemAccount } from './component/itemAccount';
 import { ItemAutor } from './component/itemAutor';
+import { ItemDate } from './component/itemDate';
+import { Paginator } from './component/paginator';
+import { ItemType } from './type';
 
 function App() {
   const [items, setItems] = useState<ItemType[]>([]);

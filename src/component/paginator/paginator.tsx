@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 
 type PaginatorPropsType = {
-  itemsPerPage: number;
+  itemsPerPage: number,
   totalItems: number;
   paginate: (num: number) => void;
   nextPage: () => void;
