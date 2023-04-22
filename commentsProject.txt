@@ -1,0 +1,2 @@
+1. Button нужен ли оператор "+" в блоке switch case?
+2. Add Redux Tool Kit to project.

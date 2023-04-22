@@ -1,21 +1,20 @@
-import { FC } from 'react';
-import Pagination from 'react-bootstrap/Pagination';
+// import Pagination from 'react-bootstrap/Pagination';
 
 type PaginatorPropsType = {
-  itemsPerPage: number,
+  itemsPerPage: number;
   totalItems: number;
   paginate: (num: number) => void;
   nextPage: () => void;
   prevPage: () => void;
 };
 
-const Paginator: FC<PaginatorPropsType> = ({
+function Paginator({
   itemsPerPage,
   totalItems,
   paginate,
   nextPage,
   prevPage,
-}) => {
+}: PaginatorPropsType) {
   const pageNumber: number[] = [];
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
@@ -40,56 +39,56 @@ const Paginator: FC<PaginatorPropsType> = ({
     //     <Pagination.Last onClick={()=>{props.paginate(pageNumber.length)}} />
     // </Pagination>
 
-    //или такой вариант
+    // или такой вариант
 
     <ul className="pagination">
       <li className="page-item">
-        <a
-          href="#"
+        <button
+          type="button"
           className="page-link"
           onClick={() => {
             paginate(pageNumber[0]);
           }}
         >
           {'<<'}
-        </a>
+        </button>
       </li>
       <li className="page-item">
-        <a href="#" className="page-link" onClick={prevPage}>
+        <button type="button" className="page-link" onClick={prevPage}>
           {'<'}
-        </a>
+        </button>
       </li>
       {pageNumber.map(num => (
         <li className="page-item" key={num}>
-          <a
-            href="#"
+          <button
+            type="button"
             className="page-link"
             onClick={() => {
               paginate(num);
             }}
           >
             {num}
-          </a>
+          </button>
         </li>
       ))}
       <li className="page-item">
-        <a href="#" className="page-link" onClick={nextPage}>
+        <button type="button" className="page-link" onClick={nextPage}>
           {'>'}
-        </a>
+        </button>
       </li>
       <li className="page-item">
-        <a
-          href="#"
+        <button
+          type="button"
           className="page-link"
           onClick={() => {
             paginate(pageNumber.length);
           }}
         >
           {'>>'}
-        </a>
+        </button>
       </li>
     </ul>
   );
-};
+}
 
 export default Paginator;

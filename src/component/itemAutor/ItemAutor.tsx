@@ -1,17 +1,15 @@
-import { FC } from 'react';
-
 type ItemAutorPropsType = {
   surname: string;
   name: string;
   patronymic: string;
 };
 
-const ItemAutor: FC<ItemAutorPropsType> = ({ surname, name, patronymic }) => {
+function ItemAutor({ surname, name, patronymic }: ItemAutorPropsType) {
   return (
     <div>
       {surname} {name.slice(0, 1)}. {patronymic.slice(0, 1)}.
     </div>
   );
-};
+}
 
 export default ItemAutor;

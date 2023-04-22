@@ -1,26 +1,38 @@
-import { FC } from 'react';
 import Button from 'react-bootstrap/Button';
 
 type BtnPropsType = {
   status: string;
 };
 
-const Btn: FC<BtnPropsType> = ({ status }) => {
+function Btn({ status }: BtnPropsType) {
   let btnStyle = '';
   let btnName = '';
 
-  const onVariant = (status: string) => {
-    switch (status) {
+  const onVariant = (condition: string) => {
+    switch (condition) {
       case 'completed':
-        return (btnStyle += 'success'), (btnName += 'Выполнено');
+        btnStyle = 'success';
+        btnName = 'Выполнено';
+        return;
       case 'new':
-        return (btnStyle += 'danger'), (btnName += 'Новое');
+        btnStyle = 'danger';
+        btnName = 'Новое';
+        return;
       case 'assigned_to':
-        return (btnStyle += 'warning'), (btnName += 'Назначено');
+        btnStyle = 'warning';
+        btnName = 'Назначено';
+        return;
       case 'started':
-        return (btnStyle += 'primary'), (btnName += 'Выполняется');
+        btnStyle = 'primary';
+        btnName = 'Выполняется';
+        return;
       case 'declined':
-        return (btnStyle += 'dark'), (btnName += 'Отменено');
+        btnStyle = 'dark';
+        btnName = 'Отменено';
+        return;
+      default:
+        btnStyle = '';
+        btnName = '';
     }
   };
   onVariant(status);
@@ -30,6 +42,6 @@ const Btn: FC<BtnPropsType> = ({ status }) => {
       {btnName}
     </Button>
   );
-};
+}
 
 export default Btn;
