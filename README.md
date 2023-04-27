@@ -32,7 +32,7 @@ yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
 Create .env in your project folder.
 Create .prettierrc file in your project folder.
 Create .eslintrc.json file in your project folder.
-Create .eslintignore in your project folder => eslint don't will analizing added files
+Create .eslintignore in your project folder => eslint don't will analizing added files and
 from package.json delete "eslintConfig"
 
 ### `yarn json-server -w db.json`
