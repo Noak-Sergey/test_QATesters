@@ -29,9 +29,9 @@ yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
 ## Create file
 
-Create .env in your project folder
-Create .prettierrc file in your project folder
-Create .eslintrc.json file in your project folder
+Create .env in your project folder.
+Create .prettierrc file in your project folder.
+Create .eslintrc.json file in your project folder.
 Create .eslintignore in your project folder => eslint don't will analizing added files
 from package.json delete "eslintConfig"
 
